@@ -3,11 +3,12 @@ node_js:
 - '8'
 after_success:
 - yarn coverage
-# deploy:
-#   provider: npm
-#   email: toxictoxer@gmail.com
-#   api_key:
-#     secure: Xk9Iq3bA3u9+Tg5SCgKScLd6+5RgYOLWdCDK8G6TamBg7pDKtf+0U74P3FierKomqLf2RSbMbzHJcVBRG17r3uCj8t5SVs8C0TO41gmUh/wZRqml5amikp1TtDyL+GqJ2HR/uGjqNlZttGKPCcvPAt5arMMR9Zu6AKFZIy2Sz1i5Vhb0RSi9sYdhY5FSn6IohkYR+WuH8HuN7PmhJp14BdIZDAFJPfa1w9KM5se5M2d4IoABuARAGAWtV8zFPDaAjQjGSgMSXU9mRzrk5K4HiKTQrYNtkdWc7hJniD+E0dEnoPGGiIQG6cUHyk9zSqLc+NbFJq8OO4zxclFuZCiho5NQ/t10PHp5ZfH3FMzYdtZzuBcIOI2ykmYUjQ71m+tUFJgx/mHj6H/cc6fNFUVFH/7WZWM61lcW3EV12rolC5yD4YPYyZIuqQtmJyDoRVvxeP3IbcoIiBHGUPr/VHPP08pNMSfLgF2aX1od/NV3dSRitb2NeDF/9U99rrwq9lJX/fd7nF0/NEvadOYZL1c5/Ifzvp1UuqcBXFKj81js8edq4j8Uh3WuDv1tw48U9M49tFDsTBgmDZhutJp6loPhGAnPZlEe95CoRBhHG4DcJSqOUeJyniGIscAkV49OEdPbsWV6rr/Jk2PI3pNX+0ZP/bV+7O/qGVg+OzQOtFL6Cr4=
-#   on:
-#     tags: true
-#     repo: kthjm/tetsuo
+deploy:
+  provider: npm
+  email: toxictoxer@gmail.com
+  api_key:
+    secure: FDLd6GQ6tSXAlYbokRNydljqAeDkVg9reH7jqaAdimdv75anKGUefopeL92H2ZdyJH1XsgChqcdYZrxctemEuAVrGVKYSy1txMnzMLI0D0GB5pUHZguym+o/ICDu2wtK7UiIij1q7gIwdEJLxA9wVBgph464DfLfAIMIIPOEbXoh6L6A5q7yvD5Xcq9spy3sVNJaRW88N2igg3etH+7ZpnF+apINNAeuhrMf/oZYHG7lcc+LwFcKdoOlw133Xk0k8agveqFdzFlAqDjX75CxJc+nra/4B/dZm5lkelMmo7rbT5Xp0zfty1RxCmtPIAvwJW4m8VfNl1MRtzlEelmatDo/oSq62lFg5S4Ya1sbn3/pUf6DpkhUMy4trBBpCXUYcQvxKY7XuZAFz3PTPdyEr/jBbxxKgu+x3nhPZ7rA3n3rIQEMOiPFL8nJYKJcMkOw7f+g+HDro1oFCSzinnlvURKe44VcNxVkZkejNMeZrKUWC9S5Xgr0lAUVQVzMxmogQ17ZmDsbFQrlKzmmyzjM+o4/y0BjhRBG+ZzbW819ZD7znNXpxuysAgCqLR4EgT9HntSq8xbMxNRIOXJHYq30aPZIS71IZP9z4m8IDq5V+GRKsYO+YByy+gIOG9Bniap2xaR8yZtvEBGVxcV6FHmSJ5XQ0jOq9dlu0hZvD0QCT5A=
+  on:
+    tags: true
+    repo: kthjm/react-power-path
+    branch: publish

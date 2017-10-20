@@ -1,38 +1,37 @@
-# react svg ghost
+# react power path
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Build Status](https://travis-ci.org/kthjm/react-power-path.svg)](https://travis-ci.org/kthjm/react-power-path)
+[![Coverage Status](https://coveralls.io/repos/github/kthjm/react-power-path/badge.svg)](https://coveralls.io/github/kthjm/react-power-path)
 
-When condition poured is matched with `data-ghost`'s condition, children pathes appear.
+enhance `<path />` that recieve its totalLength in `strokeDasharray` / `strokeDashoffset`.
 
-`data-ghost` must be set as json string.
-
-default transition is `1s`.
-
-```html
-<g data-ghost='{
-    "condition": {
-        "order": 0
-    },
-    "transition": "3s"
-}'>
-    <path d="" />
-    <path d="" />
-    <path d="" />
-</g>
+## Installation
+```shell
+yarn add react-power-path
 ```
 
-```javascript
-import Ghost from "react-svg-ghost";
+## Usage
+```js
+import React from 'react'
+import Path from 'react-power-path'
 
-const rootStyle = {
-    height: "100%"
-};
-
-export default (view,order,children) => (
-    view && <Ghost {...{
-        condition: {order},
-        rootStyle,
-        children
-    }} />
+export default (props) => (
+    <svg viewBox="0 0 300 300">
+        <g>
+            <Path {...{
+                d: "M 100 100 L 300 100 L 200 300 z",
+                style: {
+                    strokeDasharray: (totalLength) => {},
+                    strokeDashoffset: (totalLength) => {}
+                }
+            }} />
+        </g>
+    </svg>
 )
+
 ```
 
-if `order === 0`, the children's strokeDashoffset is set as 0, and they appear view.
+depending on [`createElementNS`](https://developer.mozilla.org/ja/docs/Web/API/Document/createElementNS) and [`path.getTotalLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement/getTotalLength).
+
+## License
+MIT (http://opensource.org/licenses/MIT)
