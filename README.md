@@ -16,17 +16,24 @@ import React from 'react'
 import Path from 'react-power-path'
 
 export default (props) => (
-    <svg viewBox="0 0 300 300">
-        <g>
-            <Path {...{
-                d: "M 100 100 L 300 100 L 200 300 z",
-                style: {
-                    strokeDasharray: (totalLength) => {},
-                    strokeDashoffset: (totalLength) => {}
-                }
-            }} />
-        </g>
-    </svg>
+  <svg viewBox='0 0 300 300'>
+    <g>
+      <Path {...{
+        d: 'M 100 100 L 300 100 L 200 300 z',
+        style: {
+          strokeDasharray: (totalLength) => {},
+          strokeDashoffset: (totalLength) => {}
+        }
+      }} />
+      <Path {...{
+        d: 'M 200 100 L 300 100 L 200 300 z',
+        style: {
+          strokeDasharray: 1000,
+          strokeDashoffset: 1000
+        }
+      }} />
+    </g>
+  </svg>
 )
 
 ```

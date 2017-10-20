@@ -1,6 +1,6 @@
 {
   "name": "react-power-path",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "enhance <path /> that recieve its totalLength in strokeDasharray / strokeDashoffset",
   "main": "./lib/index.js",
