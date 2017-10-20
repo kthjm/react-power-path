@@ -1,0 +1,6 @@
+src/
+test/
+.flowconfig
+.gitignore
+.travis.yml
+yarn.lock

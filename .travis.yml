@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '8'
+after_success:
+- yarn coverage
+deploy:
+  provider: npm
+  email: toxictoxer@gmail.com
+  api_key:
+    secure: FDLd6GQ6tSXAlYbokRNydljqAeDkVg9reH7jqaAdimdv75anKGUefopeL92H2ZdyJH1XsgChqcdYZrxctemEuAVrGVKYSy1txMnzMLI0D0GB5pUHZguym+o/ICDu2wtK7UiIij1q7gIwdEJLxA9wVBgph464DfLfAIMIIPOEbXoh6L6A5q7yvD5Xcq9spy3sVNJaRW88N2igg3etH+7ZpnF+apINNAeuhrMf/oZYHG7lcc+LwFcKdoOlw133Xk0k8agveqFdzFlAqDjX75CxJc+nra/4B/dZm5lkelMmo7rbT5Xp0zfty1RxCmtPIAvwJW4m8VfNl1MRtzlEelmatDo/oSq62lFg5S4Ya1sbn3/pUf6DpkhUMy4trBBpCXUYcQvxKY7XuZAFz3PTPdyEr/jBbxxKgu+x3nhPZ7rA3n3rIQEMOiPFL8nJYKJcMkOw7f+g+HDro1oFCSzinnlvURKe44VcNxVkZkejNMeZrKUWC9S5Xgr0lAUVQVzMxmogQ17ZmDsbFQrlKzmmyzjM+o4/y0BjhRBG+ZzbW819ZD7znNXpxuysAgCqLR4EgT9HntSq8xbMxNRIOXJHYq30aPZIS71IZP9z4m8IDq5V+GRKsYO+YByy+gIOG9Bniap2xaR8yZtvEBGVxcV6FHmSJ5XQ0jOq9dlu0hZvD0QCT5A=
+  on:
+    tags: true
+    repo: kthjm/react-power-path
+    branch: publish
