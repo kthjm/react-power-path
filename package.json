@@ -42,10 +42,13 @@
             }
           ],
           "flow",
-          "power-assert",
           "react"
         ],
-        "plugins": ["istanbul"]
+        "plugins": [
+          "istanbul",
+          ["espower", { "embedAst": true }],
+          "empower-assert"
+        ]
       }
     }
   },
@@ -59,6 +62,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "flow",
     "test": "cross-env NODE_ENV=test nyc mocha",
+    "prebuild": "yarn test",
     "build": "cross-env NODE_ENV=build babel ./src -d ./lib",
     "postbuild": "run-s format copy",
     "format": "prettier --write **/*.js package.json",
