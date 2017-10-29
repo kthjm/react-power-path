@@ -74,46 +74,86 @@ describe(`setTotalLength`, () => {
   })
 })
 
-it(`ifIsFn => render`, () => {
-  const totalLength = 2000
-  const getTotalLengthStub = sinon.stub().returns(totalLength)
-  const setAttributeSpy = sinon.spy()
-  const createElementNSStub = sinon.stub(document, `createElementNS`).returns({
-    setAttribute: setAttributeSpy,
-    getTotalLength: getTotalLengthStub
+describe(`ifIsFn => render`, () => {
+  it(`!props.style[key]`, () => {
+    const getTotalLengthSpy = sinon.spy()
+    const setAttributeSpy = sinon.spy()
+    const createElementNSStub = sinon
+      .stub(document, `createElementNS`)
+      .returns({
+        setAttribute: setAttributeSpy,
+        getTotalLength: getTotalLengthSpy
+      })
+
+    const props = {
+      d: 'willBeTotalLengthViaStub',
+      style: {}
+    }
+
+    const wrapper = enzyme.shallow(<Path {...props} />)
+
+    assert.ok(getTotalLengthSpy.calledOnce)
+    assert.ok(setAttributeSpy.calledOnce)
+    assert.ok(createElementNSStub.calledOnce)
+
+    assert.deepEqual(
+      wrapper.getElement(),
+      <path {...{ d: props.d, style: {} }} />
+    )
+
+    createElementNSStub.restore()
   })
 
-  const strokeDasharray = 1000
-  const strokeDashoffsetStub = sinon.stub().returnsArg(0)
+  it(`props.style[key]`, () => {
+    const totalLength = 2000
+    const getTotalLengthStub = sinon.stub().returns(totalLength)
+    const setAttributeSpy = sinon.spy()
+    const createElementNSStub = sinon
+      .stub(document, `createElementNS`)
+      .returns({
+        setAttribute: setAttributeSpy,
+        getTotalLength: getTotalLengthStub
+      })
 
-  const props = {
-    d: 'willBeTotalLengthViaStub',
-    style: {
-      strokeDasharray,
-      strokeDashoffset: strokeDashoffsetStub
+    const strokeDashoffset = sinon.stub().returnsArg(0)
+    const animation = sinon
+      .stub()
+      .returns('3s ease-in 1s 2 reverse both paused slidein')
+    const props = {
+      d: 'willBeTotalLengthViaStub',
+      style: {
+        strokeDasharray: 1000,
+        strokeDashoffset,
+        animation,
+        animationName: 'slidein'
+      }
     }
-  }
 
-  const wrapper = enzyme.shallow(<Path {...props} />)
+    const wrapper = enzyme.shallow(<Path {...props} />)
 
-  assert.ok(createElementNSStub.calledOnce)
-  assert.ok(getTotalLengthStub.calledOnce)
-  assert.ok(strokeDashoffsetStub.calledOnce)
+    assert.ok(getTotalLengthStub.calledOnce)
+    assert.ok(setAttributeSpy.calledOnce)
+    assert.ok(createElementNSStub.calledOnce)
+    assert.ok(strokeDashoffset.calledOnce)
+    assert.ok(animation.calledOnce)
 
-  // https://github.com/airbnb/enzyme/blob/master/docs/api/ShallowWrapper/getNode.md
-  // => Error: ShallowWrapper::getNode() is no longer supported. Use ShallowWrapper::getElement() instead
-  assert.deepEqual(
-    wrapper.getElement(),
-    <path
-      {...{
-        d: 'willBeTotalLengthViaStub',
-        style: {
-          strokeDasharray: 1000,
-          strokeDashoffset: 2000
-        }
-      }}
-    />
-  )
+    // https://github.com/airbnb/enzyme/blob/master/docs/api/ShallowWrapper/getNode.md
+    // => Error: ShallowWrapper::getNode() is no longer supported. Use ShallowWrapper::getElement() instead
+    assert.deepEqual(
+      wrapper.getElement(),
+      <path
+        {...{
+          d: props.d,
+          style: {
+            strokeDasharray: props.style.strokeDasharray,
+            strokeDashoffset: 2000,
+            animation: '3s ease-in 1s 2 reverse both paused slidein',
+            animationName: props.style.animationName
+          }
+        }}
+      />
+    )
 
-  createElementNSStub.restore()
+    createElementNSStub.restore()
+  })
 })

@@ -15,7 +15,12 @@ type Props = {
   [attributeName: string]: any
 }
 
-const passStyleKeys = ['strokeDasharray', 'strokeDashoffset']
+const passStyleKeys = [
+  'strokeDasharray',
+  'strokeDashoffset',
+  'animation',
+  'animationName'
+]
 
 export default class PowerPath extends React.Component<Props> {
   totalLength: ?number
@@ -36,7 +41,9 @@ export default class PowerPath extends React.Component<Props> {
     const props = Object.assign({}, this.props)
     if (typeof props.style === 'object') {
       passStyleKeys.forEach(key => {
-        props.style[key] = ifIsFn(props.style[key], this.totalLength)
+        if (props.style[key]) {
+          props.style[key] = ifIsFn(props.style[key], this.totalLength)
+        }
       })
     }
     return <path {...props} />

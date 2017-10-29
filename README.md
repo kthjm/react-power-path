@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/kthjm/react-power-path.svg)](https://travis-ci.org/kthjm/react-power-path)
 [![Coverage Status](https://coveralls.io/repos/github/kthjm/react-power-path/badge.svg)](https://coveralls.io/github/kthjm/react-power-path)
 
-enhance `<path />` that recieve its totalLength in `strokeDasharray` / `strokeDashoffset`.
+> enhanced `<path />` that recieve its totalLength via specific styles.
 
 ## Installation
 ```shell
@@ -22,14 +22,9 @@ export default (props) => (
         d: 'M 100 100 L 300 100 L 200 300 z',
         style: {
           strokeDasharray: (totalLength) => {},
-          strokeDashoffset: (totalLength) => {}
-        }
-      }} />
-      <Path {...{
-        d: 'M 200 100 L 300 100 L 200 300 z',
-        style: {
-          strokeDasharray: 1000,
-          strokeDashoffset: 1000
+          strokeDashoffset: (totalLength) => {},
+          animation: (totalLength) => {},
+          animationName: (totalLength) => {},
         }
       }} />
     </g>
@@ -38,7 +33,17 @@ export default (props) => (
 
 ```
 
-depending on [`createElementNS`](https://developer.mozilla.org/ja/docs/Web/API/Document/createElementNS) and [`path.getTotalLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement/getTotalLength).
+## API
+
+specific styles:
+- `strokeDasharray`
+- `strokeDashoffset`
+- `animation`
+- `animationName`
+
+If they are set as function, the totalLength passed, and the result will be value. Or set as values, nothing happens.
+
+> `react-power-path` depend on [`createElementNS`](https://developer.mozilla.org/ja/docs/Web/API/Document/createElementNS) and [`path.getTotalLength`](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength).
 
 ## License
 MIT (http://opensource.org/licenses/MIT)
