@@ -2,7 +2,7 @@
   "name": "react-power-path",
   "version": "1.1.0",
   "description":
-    "enhance <path /> that recieve its totalLength via specify style",
+    "enhanced <path /> that recieve its totalLength via specific style",
   "main": "./lib/index.js",
   "repository": "https://github.com/kthjm/react-power-path",
   "author": "kthjm <toxictoxer@gmail.com>",
