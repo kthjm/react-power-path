@@ -1,9 +1,9 @@
 {
   "name": "react-power-path",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description":
     "enhanced <path /> that recieve its totalLength via specific style",
-  "main": "./lib/index.js",
+  "main": "lib",
   "repository": "https://github.com/kthjm/react-power-path",
   "author": "kthjm <toxictoxer@gmail.com>",
   "license": "MIT",
@@ -46,7 +46,12 @@
         ],
         "plugins": [
           "istanbul",
-          ["espower", { "embedAst": true }],
+          [
+            "espower",
+            {
+              "embedAst": true
+            }
+          ],
           "empower-assert"
         ]
       }
@@ -59,14 +64,16 @@
     "instrument": false
   },
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "flow",
     "test": "cross-env NODE_ENV=test nyc mocha",
     "prebuild": "yarn test",
     "build": "cross-env NODE_ENV=build babel ./src -d ./lib",
     "postbuild": "run-s format copy",
     "format": "prettier --write **/*.js package.json",
-    "copy": "flow-copy-source --verbose ./src ./lib"
+    "copy": "flow-copy-source --verbose ./src ./lib",
+    "report": "nyc report --reporter=lcov",
+    "codecov": "codecov",
+    "coverage": "run-s report codecov"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -75,8 +82,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-power-assert": "^1.0.0",
     "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "coveralls": "^3.0.0",
+    "codecov": "^3.0.0",
     "cross-env": "^5.1.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",

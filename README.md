@@ -1,7 +1,7 @@
 # react power path
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Build Status](https://travis-ci.org/kthjm/react-power-path.svg)](https://travis-ci.org/kthjm/react-power-path)
-[![Coverage Status](https://coveralls.io/repos/github/kthjm/react-power-path/badge.svg)](https://coveralls.io/github/kthjm/react-power-path)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Build Status](https://img.shields.io/travis/kthjm/react-power-path.svg?style=flat-square)](https://travis-ci.org/kthjm/react-power-path)
+[![Coverage Status](https://img.shields.io/codecov/c/github/kthjm/react-power-path.svg?style=flat-square)](https://codecov.io/github/kthjm/react-power-path)
 
 > enhanced `<path />` that recieve its totalLength via specific styles.
 
