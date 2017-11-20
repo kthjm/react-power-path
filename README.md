@@ -1,7 +1,10 @@
-# react power path
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+# react-power-path
+
+[![npm](https://img.shields.io/npm/v/react-power-path.svg?style=flat-square)](https://www.npmjs.com/package/react-power-path)
+[![npm](https://img.shields.io/npm/dm/react-power-path.svg?style=flat-square)](https://www.npmjs.com/package/react-power-path)
 [![Build Status](https://img.shields.io/travis/kthjm/react-power-path.svg?style=flat-square)](https://travis-ci.org/kthjm/react-power-path)
 [![Coverage Status](https://img.shields.io/codecov/c/github/kthjm/react-power-path.svg?style=flat-square)](https://codecov.io/github/kthjm/react-power-path)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 > enhanced `<path />` that recieve its totalLength via specific styles.
 
