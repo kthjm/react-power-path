@@ -4,9 +4,9 @@
 [![npm](https://img.shields.io/npm/dm/react-power-path.svg?style=flat-square)](https://www.npmjs.com/package/react-power-path)
 [![Build Status](https://img.shields.io/travis/kthjm/react-power-path.svg?style=flat-square)](https://travis-ci.org/kthjm/react-power-path)
 [![Coverage Status](https://img.shields.io/codecov/c/github/kthjm/react-power-path.svg?style=flat-square)](https://codecov.io/github/kthjm/react-power-path)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![cdn](https://img.shields.io/badge/jsdelivr-latest-e84d3c.svg?style=flat-square)](https://cdn.jsdelivr.net/npm/react-power-path/dist/react-power-path.min.js)
 
-> enhanced `<path />` that recieve its totalLength via specific styles.
+enhanced `<path />` that recieve its totalLength via specific styles.
 
 ## Installation
 ```shell
