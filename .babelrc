@@ -1,0 +1,19 @@
+{
+  "env": {
+    "BUILD": {
+      "presets": ["es2015-rollup","react"]
+    },
+    "TEST": {
+      "presets": [
+        ["env", { "targets": { "browsers": ["last 2 versions"] } }],
+        "flow",
+        "react"
+      ],
+      "plugins": [
+        "istanbul",
+        ["espower", { "embedAst": true }],
+        "empower-assert"
+      ]
+    }
+  }
+}
