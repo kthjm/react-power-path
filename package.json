@@ -26,9 +26,7 @@
     "process": "run-p process:cjs process:min",
     "format": "prettier --write **/*.js package.json",
     "copy": "flow-copy-source --verbose src dist",
-    "report": "nyc report --reporter=lcov",
-    "codecov": "codecov",
-    "coverage": "run-s report codecov"
+    "coverage": "nyc report --reporter=lcov && codecov"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
